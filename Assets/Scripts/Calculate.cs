@@ -13,9 +13,6 @@ public class Calculate : MonoBehaviour
     private Dropdown dropdownNum;
     [SerializeField]
     private Dropdown dropdownResult;
-   
-    
-
 
     public string CalculateExpression(string expression) 
     {
@@ -26,13 +23,13 @@ public class Calculate : MonoBehaviour
 
     public string CalculateDistance(string value) 
     {
-        int dropdownValue;
-        int dropdownValueResult;
-       
-
-        Enum unit = UnitParser.Default.Parse(dropdownNum.options[dropdownNum.value].text, typeof(LengthUnit));
-        Debug.Log(unit.ToString());
-       
-        return "";
+        Enum unitFrom = UnitParser.Default.Parse(dropdownNum.options[dropdownNum.value].text, typeof(LengthUnit));
+        Enum unitTo = UnitParser.Default.Parse(dropdownResult.options[dropdownResult.value].text, typeof(LengthUnit));
+        
+        double convertedValue = UnitConverter.Convert(decimal.Parse(value), unitFrom, unitTo);
+        decimal toValue = Convert.ToDecimal(convertedValue); 
+        value = toValue.ToString();
+        
+        return value;
     }
 }

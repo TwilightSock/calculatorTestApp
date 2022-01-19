@@ -591,13 +591,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1332382304}
     m_Modifications:
+    - target: {fileID: 2601190393897845547, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -0.0000076294
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2601190394975334337, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Text
-      value: Meter
+      value: m
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684992, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Pivot.x
@@ -693,11 +741,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[2].m_Text
-      value: Kilometer
+      value: km
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[3].m_Text
-      value: ml
+      value: mi
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[4].m_Text
@@ -6338,13 +6386,61 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1332382304}
     m_Modifications:
+    - target: {fileID: 2601190393897845547, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0.000015259
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394659480393, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2601190394975334337, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Text
-      value: Meter
+      value: m
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601190394975334338, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684992, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Pivot.x
@@ -6432,35 +6528,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[0].m_Text
-      value: Meter
+      value: m
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[1].m_Text
-      value: Centimeter
+      value: cm
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[2].m_Text
-      value: Kilometer
+      value: km
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[3].m_Text
-      value: Mile
+      value: mi
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[4].m_Text
-      value: Inch
+      value: in
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[5].m_Text
-      value: Millimeter
+      value: mm
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[6].m_Text
-      value: Feet
+      value: ft
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684993, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Options.m_Options.Array.data[7].m_Text
-      value: Yard
+      value: yd
       objectReference: {fileID: 0}
     - target: {fileID: 2601190395192684999, guid: 4d7791f375d6fd94aa462a0bb2a012e5, type: 3}
       propertyPath: m_Name
