@@ -5,16 +5,13 @@ using UnityEngine.UI;
 
 public class OutputController : MonoBehaviour
 {
-    private Text displayText;
+    
     [SerializeField]
     private Calculate calculate;
     [SerializeField]
-    private OutputController outputText;
+    private Text displayText;
 
-    void Awake()
-    {
-        displayText = (Text)outputText.gameObject.GetComponent<Text>();
-    }
+    
 
     public void ClearPanel()
     {

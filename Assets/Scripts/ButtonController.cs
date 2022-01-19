@@ -7,11 +7,10 @@ public class ButtonController : MonoBehaviour
     public string value;
     [SerializeField]
     private OutputController outputController;
+    [SerializeField]
+    private DistanceController distanceController;
 
-    public void Awake()
-    {
-        outputController= GameObject.Find("OutputPanel").GetComponent<OutputController>();
-    }
+   
 
 
     public void AddValue()
@@ -33,4 +32,13 @@ public class ButtonController : MonoBehaviour
         outputController.ClearPanel();
     }
 
-}
+    public void DistanceOpen() 
+    {
+        distanceController.ModeDistanceOpen();
+    }
+
+    public void DistanceClose() 
+    {
+        distanceController.ModeDistanceClose();
+    }
+}  
