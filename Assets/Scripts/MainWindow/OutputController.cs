@@ -28,4 +28,10 @@ public class OutputController : MonoBehaviour
         string answer = calculate.CalculateExpression(displayText.text);
         displayText.text = answer;
     }
+
+    public void ShowConvertedDistance() 
+    {
+        string answer = calculate.CalculateDistance(displayText.text);
+        displayText.text = answer;
+    }
 }

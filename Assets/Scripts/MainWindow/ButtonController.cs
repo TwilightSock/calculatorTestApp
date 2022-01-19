@@ -9,9 +9,8 @@ public class ButtonController : MonoBehaviour
     private OutputController outputController;
     [SerializeField]
     private DistanceController distanceController;
-
-   
-
+    [SerializeField]
+    private GroupObjectsController groupObjectsController;
 
     public void AddValue()
     {
@@ -37,8 +36,9 @@ public class ButtonController : MonoBehaviour
         distanceController.ModeDistanceOpen();
     }
 
-    public void DistanceClose() 
+    public void DefaultClose() 
     {
-        distanceController.ModeDistanceClose();
+        groupObjectsController.ModeDefaultClose();
     }
+
 }  
