@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class DistanceController : MonoBehaviour
 {
+   
     public void Start()
     {
         gameObject.SetActive(false);
+        
     }
     public void ModeDistanceOpen()
     {
-		gameObject.SetActive(true);	
+
+		gameObject.SetActive(true);
+        
 	}
 
 	public void ModeDistanceClose()
 	{
 		gameObject.SetActive(false);
+        
 	}
+
+
 
 }

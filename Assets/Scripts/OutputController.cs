@@ -28,4 +28,16 @@ public class OutputController : MonoBehaviour
         string answer = calculate.CalculateExpression(displayText.text);
         displayText.text = answer;
     }
+
+    public void ShowConvertedDistance(Dropdown inputDropdown,Dropdown outputDropdown) 
+    {
+        string answer = calculate.CalculateDistance(displayText.text,inputDropdown,outputDropdown);
+        displayText.text = answer;
+    }
+
+    public void ShowConvertedTemperature(Dropdown inputDropdown, Dropdown outputDropdown)
+    {
+        string answer = calculate.CalculateTemperature(displayText.text, inputDropdown, outputDropdown);
+        displayText.text = answer;
+    }
 }
