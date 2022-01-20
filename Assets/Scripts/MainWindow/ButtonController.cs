@@ -11,7 +11,8 @@ public class ButtonController : MonoBehaviour
     private DistanceController distanceController;
     [SerializeField]
     private GroupObjectsController groupObjectsController;
-
+    [SerializeField]
+    private TemperatureController temperatureController;
     public void AddValue()
     {
         
@@ -36,9 +37,15 @@ public class ButtonController : MonoBehaviour
         distanceController.ModeDistanceOpen();
     }
 
+    public void TemperatureOpen()
+    {
+        temperatureController.ModeTemperatureOpen();
+    }
+
     public void DefaultClose() 
     {
         groupObjectsController.ModeDefaultClose();
     }
+
 
 }  

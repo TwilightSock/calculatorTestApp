@@ -29,9 +29,15 @@ public class OutputController : MonoBehaviour
         displayText.text = answer;
     }
 
-    public void ShowConvertedDistance() 
+    public void ShowConvertedDistance(Dropdown inputDropdown,Dropdown outputDropdown) 
     {
-        string answer = calculate.CalculateDistance(displayText.text);
+        string answer = calculate.CalculateDistance(displayText.text,inputDropdown,outputDropdown);
+        displayText.text = answer;
+    }
+
+    public void ShowConvertedTemperature(Dropdown inputDropdown, Dropdown outputDropdown)
+    {
+        string answer = calculate.CalculateTemperature(displayText.text, inputDropdown, outputDropdown);
         displayText.text = answer;
     }
 }

@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DistanceMenuButtonController : MonoBehaviour
+public class TemperatureButtonConrtroller : MonoBehaviour
 {
     public string value;
     [SerializeField]
     private OutputController outputController;
     [SerializeField]
-    private DistanceController distanceController;
-    [SerializeField]
     private GroupObjectsController groupObjectsController;
     [SerializeField]
-    private Dropdown dropdownNum;
+    private TemperatureController temperatureController;
     [SerializeField]
-    private Dropdown dropdownResult;
+    private Dropdown input;
+    [SerializeField]
+    private Dropdown output;
     public void AddValue()
     {
 
@@ -23,10 +23,10 @@ public class DistanceMenuButtonController : MonoBehaviour
         outputController.AddText(value);
     }
 
-    public void ConvertDistance()
+    public void ConvertTemperature()
     {
         Debug.Log("Convert");
-        outputController.ShowConvertedDistance(dropdownNum,dropdownResult);
+        outputController.ShowConvertedTemperature(input,output);
     }
 
     public void Clear()
@@ -35,13 +35,13 @@ public class DistanceMenuButtonController : MonoBehaviour
         outputController.ClearPanel();
     }
 
-   
-    public void DistanceClose()
+
+    public void TemperatureClose()
     {
-        distanceController.ModeDistanceClose();
+        temperatureController.ModeTemperatureClose();
     }
 
-    public void DefaultOpen() 
+    public void DefaultOpen()
     {
         groupObjectsController.ModeDefaultOpen();
     }
