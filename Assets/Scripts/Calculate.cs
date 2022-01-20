@@ -41,7 +41,7 @@ public class Calculate : MonoBehaviour
 
             return value;
         }
-        catch (UnitNotFoundException ex)
+        catch (FormatException ex)
         {
             Debug.Log(ex.ToString());
             return "Syntax Error"; 
@@ -52,7 +52,7 @@ public class Calculate : MonoBehaviour
     {
         try
         {
-            Enum unitFrom = UnitParser.Default.Parse("mm", typeof(TemperatureUnit));
+            Enum unitFrom = UnitParser.Default.Parse(dropdownNum.options[dropdownNum.value].text, typeof(TemperatureUnit));
             
             Enum unitTo = UnitParser.Default.Parse(dropdownResult.options[dropdownResult.value].text, typeof(TemperatureUnit));
 
@@ -62,7 +62,7 @@ public class Calculate : MonoBehaviour
 
             return value;
         }
-        catch(UnitNotFoundException ex) 
+        catch(FormatException ex) 
         {
             Debug.Log(ex.ToString());
             return "Syntax Error";
