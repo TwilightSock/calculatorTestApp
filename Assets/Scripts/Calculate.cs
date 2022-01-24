@@ -31,8 +31,8 @@ public class Calculate : MonoBehaviour
     {
         try
         {
-            Enum unitFrom = UnitParser.Default.Parse(dropdownNum.options[dropdownNum.value].text, typeof(LengthUnit));     /*UnitParser converts names like "cm,mm,km ..." to enum like "Length.Centimeter,Length.Kilometer ..." 
-                                                                                                                                     */
+            Enum unitFrom = UnitParser.Default.Parse(dropdownNum.options[dropdownNum.value].text, typeof(LengthUnit));
+                                                                                                                                  
             Enum unitTo = UnitParser.Default.Parse(dropdownResult.options[dropdownResult.value].text, typeof(LengthUnit));
 
             double convertedValue = UnitConverter.Convert(decimal.Parse(value), unitFrom, unitTo);
