@@ -11,13 +11,15 @@ public class DistanceMenuButtonController : MonoBehaviour
     [SerializeField]
     private OutputController outputController;
     [SerializeField]
-    private DistanceController distanceController;
-    [SerializeField]
-    private GroupObjectsController groupObjectsController;
-    [SerializeField]
     private TMP_Dropdown dropdownNum;
     [SerializeField]
     private TMP_Dropdown dropdownResult;
+    [SerializeField]
+    private GameObject changeModeTo;
+    [SerializeField]
+    private GameObject changeModeFrom;
+    [SerializeField]
+    private ModeController modeController;
     public void AddValue()
     {
 
@@ -36,15 +38,9 @@ public class DistanceMenuButtonController : MonoBehaviour
         Debug.Log("Clear");
         outputController.ClearPanel();
     }
-
-   
-    public void DistanceClose()
+    
+    public void ChangeModeButton() 
     {
-        distanceController.ModeDistanceClose();
-    }
-
-    public void DefaultOpen() 
-    {
-        groupObjectsController.ModeDefaultOpen();
+        modeController.ModeOpen(changeModeFrom, changeModeTo);
     }
 }

@@ -11,13 +11,15 @@ public class TemperatureButtonConrtroller : MonoBehaviour
     [SerializeField]
     private OutputController outputController;
     [SerializeField]
-    private GroupObjectsController groupObjectsController;
-    [SerializeField]
-    private TemperatureController temperatureController;
-    [SerializeField]
     private TMP_Dropdown input;
     [SerializeField]
     private TMP_Dropdown output;
+    [SerializeField]
+    private GameObject changeModeTo;
+    [SerializeField]
+    private GameObject changeModeFrom;
+    [SerializeField]
+    private ModeController modeController;
     public void AddValue()
     {
 
@@ -37,14 +39,9 @@ public class TemperatureButtonConrtroller : MonoBehaviour
         outputController.ClearPanel();
     }
 
-
-    public void TemperatureClose()
+    public void ChangeModeButton()
     {
-        temperatureController.ModeTemperatureClose();
+        modeController.ModeOpen(changeModeFrom, changeModeTo);
     }
 
-    public void DefaultOpen()
-    {
-        groupObjectsController.ModeDefaultOpen();
-    }
 }

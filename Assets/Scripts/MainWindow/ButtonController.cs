@@ -9,11 +9,12 @@ public class ButtonController : MonoBehaviour
     [SerializeField]
     private OutputController outputController;
     [SerializeField]
-    private DistanceController distanceController;
+    private GameObject changeModeTo;
     [SerializeField]
-    private GroupObjectsController groupObjectsController;
+    private GameObject changeModeFrom;
     [SerializeField]
-    private TemperatureController temperatureController;
+    private ModeController modeController;
+    
     public void AddValue()
     {
         
@@ -33,20 +34,9 @@ public class ButtonController : MonoBehaviour
         outputController.ClearPanel();
     }
 
-    public void DistanceOpen() 
+    public void ChangeModeButton() 
     {
-        distanceController.ModeDistanceOpen();
+        modeController.ModeOpen(changeModeFrom, changeModeTo);
     }
-
-    public void TemperatureOpen()
-    {
-        temperatureController.ModeTemperatureOpen();
-    }
-
-    public void DefaultClose() 
-    {
-        groupObjectsController.ModeDefaultClose();
-    }
-
 
 }  
