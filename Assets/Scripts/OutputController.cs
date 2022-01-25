@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class OutputController : MonoBehaviour
     [SerializeField]
     private Calculate calculate;
     [SerializeField]
-    private Text displayText;
+    private TMP_Text displayText;
 
     
 
@@ -29,13 +30,13 @@ public class OutputController : MonoBehaviour
         displayText.text = answer;
     }
 
-    public void ShowConvertedDistance(Dropdown inputDropdown,Dropdown outputDropdown) 
+    public void ShowConvertedDistance(TMP_Dropdown inputDropdown,TMP_Dropdown outputDropdown) 
     {
         string answer = calculate.CalculateDistance(displayText.text,inputDropdown,outputDropdown);
         displayText.text = answer;
     }
 
-    public void ShowConvertedTemperature(Dropdown inputDropdown, Dropdown outputDropdown)
+    public void ShowConvertedTemperature(TMP_Dropdown inputDropdown,TMP_Dropdown outputDropdown)
     {
         string answer = calculate.CalculateTemperature(displayText.text, inputDropdown, outputDropdown);
         displayText.text = answer;

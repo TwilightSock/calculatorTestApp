@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +15,9 @@ public class TemperatureButtonConrtroller : MonoBehaviour
     [SerializeField]
     private TemperatureController temperatureController;
     [SerializeField]
-    private Dropdown input;
+    private TMP_Dropdown input;
     [SerializeField]
-    private Dropdown output;
+    private TMP_Dropdown output;
     public void AddValue()
     {
 

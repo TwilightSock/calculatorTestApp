@@ -6,6 +6,7 @@ using System;
 using UnityEngine.UI;
 using UnitsNet;
 using UnitsNet.Units;
+using TMPro;
 
 public class Calculate : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class Calculate : MonoBehaviour
 
     }
 
-    public string CalculateDistance(string value,Dropdown dropdownNum,Dropdown dropdownResult)
+    public string CalculateDistance(string value,TMP_Dropdown dropdownNum,TMP_Dropdown dropdownResult)
     {
         try
         {
@@ -48,7 +49,7 @@ public class Calculate : MonoBehaviour
         }
     }
 
-    public string CalculateTemperature(string value,Dropdown dropdownNum,Dropdown dropdownResult)
+    public string CalculateTemperature(string value,TMP_Dropdown dropdownNum,TMP_Dropdown dropdownResult)
     {
         try
         {
