@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class DistanceMenuButtonController : MonoBehaviour
 {
-    public string value;
+    [SerializeField]
+    private string value;
     [SerializeField]
     private OutputController outputController;
     [SerializeField]
