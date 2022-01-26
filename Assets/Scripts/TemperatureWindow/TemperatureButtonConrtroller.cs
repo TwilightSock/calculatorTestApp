@@ -11,13 +11,10 @@ public class TemperatureButtonConrtroller : MonoBehaviour
     
     [SerializeField]
     private OutputController outputController;
+    
     [SerializeField]
-    private Calculate calculate;
-   
-    [SerializeField]
-    private TMP_Dropdown input;
-    [SerializeField]
-    private TMP_Dropdown output;
+    private GameObject interfaceGameObject;
+    private ICalculator calculate;
    
     [SerializeField]
     private GameObject changeModeTo;
@@ -25,6 +22,11 @@ public class TemperatureButtonConrtroller : MonoBehaviour
     private GameObject changeModeFrom;
     [SerializeField]
     private ModeController modeController;
+
+    public void Awake()
+    {
+        calculate = interfaceGameObject.GetComponent<CalculateTemperature>();
+    }
     public void AddValue()
     {
 
@@ -35,7 +37,7 @@ public class TemperatureButtonConrtroller : MonoBehaviour
     public void ConvertTemperature()
     {
         Debug.Log("Convert");
-        calculate.CalculateTemperature(input,output);
+        calculate.Calculate();
     }
 
     public void Clear()

@@ -11,13 +11,10 @@ public class DistanceMenuButtonController : MonoBehaviour
    
     [SerializeField]
     private OutputController outputController;
+    
     [SerializeField]
-    private Calculate calculate;
-   
-    [SerializeField]
-    private TMP_Dropdown dropdownNum;
-    [SerializeField]
-    private TMP_Dropdown dropdownResult;
+    private GameObject interfaceGameObject;
+    private ICalculator calculate;
    
     [SerializeField]
     private GameObject changeModeTo;
@@ -25,6 +22,11 @@ public class DistanceMenuButtonController : MonoBehaviour
     private GameObject changeModeFrom;
     [SerializeField]
     private ModeController modeController;
+
+    public void Awake()
+    {
+        calculate = interfaceGameObject.GetComponent<CalculateDistance>();
+    }
     public void AddValue()
     {
 
@@ -35,7 +37,7 @@ public class DistanceMenuButtonController : MonoBehaviour
     public void ConvertDistance()
     {
         Debug.Log("Convert");
-        calculate.CalculateDistance(dropdownNum,dropdownResult);
+        calculate.Calculate();
     }
 
     public void Clear()

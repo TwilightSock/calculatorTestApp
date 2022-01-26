@@ -9,8 +9,10 @@ public class ButtonController : MonoBehaviour
    
     [SerializeField]
     private OutputController outputController;
+
     [SerializeField]
-    private Calculate calculate;
+    private GameObject interfaceGameObject;
+    private ICalculator calculate;
     
     [SerializeField]
     private GameObject changeModeTo;
@@ -18,7 +20,12 @@ public class ButtonController : MonoBehaviour
     private GameObject changeModeFrom;
     [SerializeField]
     private ModeController modeController;
-    
+
+
+    public void Start()
+    {
+        calculate = interfaceGameObject.GetComponent<CalculateExpression>();
+    }
     public void AddValue()
     {
         
@@ -29,7 +36,7 @@ public class ButtonController : MonoBehaviour
     public void FigureOutExpression()
     {
         Debug.Log("FigureOut");
-        calculate.CalculateExpression();
+        calculate.Calculate();
     }
 
     public void Clear()
