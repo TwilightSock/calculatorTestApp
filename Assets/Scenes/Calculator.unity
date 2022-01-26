@@ -2334,6 +2334,10 @@ PrefabInstance:
       value: =
       objectReference: {fileID: 0}
     - target: {fileID: 7228407107365360714, guid: 723e4f3a8c3ba2b4d8ec7774ae9768c0, type: 3}
+      propertyPath: calculate
+      value: 
+      objectReference: {fileID: 2011100159}
+    - target: {fileID: 7228407107365360714, guid: 723e4f3a8c3ba2b4d8ec7774ae9768c0, type: 3}
       propertyPath: dropdownNum
       value: 
       objectReference: {fileID: 723471665}
@@ -4264,6 +4268,10 @@ PrefabInstance:
       propertyPath: output
       value: 
       objectReference: {fileID: 80437830}
+    - target: {fileID: 835606022826644258, guid: 9b8823e96c4641546bda71e73c3c2283, type: 3}
+      propertyPath: calculate
+      value: 
+      objectReference: {fileID: 2011100159}
     - target: {fileID: 835606022826644258, guid: 9b8823e96c4641546bda71e73c3c2283, type: 3}
       propertyPath: outputController
       value: 
@@ -6731,6 +6739,10 @@ PrefabInstance:
       value: =
       objectReference: {fileID: 0}
     - target: {fileID: 609812156760324856, guid: 3dbc0bbac640aae4e8e6cac2dc49f47b, type: 3}
+      propertyPath: calculate
+      value: 
+      objectReference: {fileID: 2011100159}
+    - target: {fileID: 609812156760324856, guid: 3dbc0bbac640aae4e8e6cac2dc49f47b, type: 3}
       propertyPath: outputController
       value: 
       objectReference: {fileID: 1319935582}
@@ -8954,6 +8966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fcce5333a18349478f73ec9b919a991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outputController: {fileID: 1319935582}
 --- !u!1 &2033225569
 GameObject:
   m_ObjectHideFlags: 0

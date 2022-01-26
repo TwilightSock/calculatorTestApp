@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,8 +8,7 @@ using UnityEngine.UI;
 public class OutputController : MonoBehaviour
 {
     
-    [SerializeField]
-    private Calculate calculate;
+   
     [SerializeField]
     private TMP_Text displayText;
 
@@ -24,21 +24,14 @@ public class OutputController : MonoBehaviour
         displayText.text += newText;
     }
 
-    public void ShowResult()
+    public string ReadText() 
     {
-        string answer = calculate.CalculateExpression(displayText.text);
-        displayText.text = answer;
+        string str = displayText.text;
+        return str;
     }
 
-    public void ShowConvertedDistance(TMP_Dropdown inputDropdown,TMP_Dropdown outputDropdown) 
+    public void ShowResult(string answer) 
     {
-        string answer = calculate.CalculateDistance(displayText.text,inputDropdown,outputDropdown);
-        displayText.text = answer;
-    }
-
-    public void ShowConvertedTemperature(TMP_Dropdown inputDropdown,TMP_Dropdown outputDropdown)
-    {
-        string answer = calculate.CalculateTemperature(displayText.text, inputDropdown, outputDropdown);
         displayText.text = answer;
     }
 }

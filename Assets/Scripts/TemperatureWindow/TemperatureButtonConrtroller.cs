@@ -8,12 +8,17 @@ public class TemperatureButtonConrtroller : MonoBehaviour
 {
     [SerializeField]
     private string value;
+    
     [SerializeField]
     private OutputController outputController;
+    [SerializeField]
+    private Calculate calculate;
+   
     [SerializeField]
     private TMP_Dropdown input;
     [SerializeField]
     private TMP_Dropdown output;
+   
     [SerializeField]
     private GameObject changeModeTo;
     [SerializeField]
@@ -30,7 +35,7 @@ public class TemperatureButtonConrtroller : MonoBehaviour
     public void ConvertTemperature()
     {
         Debug.Log("Convert");
-        outputController.ShowConvertedTemperature(input,output);
+        calculate.CalculateTemperature(input,output);
     }
 
     public void Clear()

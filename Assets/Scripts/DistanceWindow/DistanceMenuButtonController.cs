@@ -8,12 +8,17 @@ public class DistanceMenuButtonController : MonoBehaviour
 {
     [SerializeField]
     private string value;
+   
     [SerializeField]
     private OutputController outputController;
+    [SerializeField]
+    private Calculate calculate;
+   
     [SerializeField]
     private TMP_Dropdown dropdownNum;
     [SerializeField]
     private TMP_Dropdown dropdownResult;
+   
     [SerializeField]
     private GameObject changeModeTo;
     [SerializeField]
@@ -30,7 +35,7 @@ public class DistanceMenuButtonController : MonoBehaviour
     public void ConvertDistance()
     {
         Debug.Log("Convert");
-        outputController.ShowConvertedDistance(dropdownNum,dropdownResult);
+        calculate.CalculateDistance(dropdownNum,dropdownResult);
     }
 
     public void Clear()

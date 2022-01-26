@@ -6,8 +6,12 @@ public class ButtonController : MonoBehaviour
 {
     [SerializeField]
     private string value;
+   
     [SerializeField]
     private OutputController outputController;
+    [SerializeField]
+    private Calculate calculate;
+    
     [SerializeField]
     private GameObject changeModeTo;
     [SerializeField]
@@ -25,7 +29,7 @@ public class ButtonController : MonoBehaviour
     public void FigureOutExpression()
     {
         Debug.Log("FigureOut");
-        outputController.ShowResult();
+        calculate.CalculateExpression();
     }
 
     public void Clear()

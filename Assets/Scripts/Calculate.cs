@@ -10,25 +10,26 @@ using TMPro;
 
 public class Calculate : MonoBehaviour
 {
-    
+    [SerializeField]
+    private OutputController outputController;
 
-    public string CalculateExpression(string expression) 
+    public void CalculateExpression() 
     {
         try
         {
             DataTable datatable = new DataTable();
-            return datatable.Compute(expression, "").ToString();
+            outputController.ShowResult(datatable.Compute(outputController.ReadText(), "").ToString());
         }
         catch(SyntaxErrorException ex) 
         {
             Debug.Log(ex);
-            return "Syntax error";
+            outputController.ShowResult("Syntax error");
         }
        
 
     }
 
-    public string CalculateDistance(string value,TMP_Dropdown dropdownNum,TMP_Dropdown dropdownResult)
+    public void CalculateDistance(TMP_Dropdown dropdownNum,TMP_Dropdown dropdownResult)
     {
         try
         {
@@ -36,20 +37,20 @@ public class Calculate : MonoBehaviour
                                                                                                                                   
             Enum unitTo = UnitParser.Default.Parse(dropdownResult.options[dropdownResult.value].text, typeof(LengthUnit));
 
-            double convertedValue = UnitConverter.Convert(decimal.Parse(value), unitFrom, unitTo);
+            double convertedValue = UnitConverter.Convert(decimal.Parse(outputController.ReadText()), unitFrom, unitTo);
             decimal toValue = Convert.ToDecimal(convertedValue);
-            value = toValue.ToString();
+            string value = toValue.ToString();
 
-            return value;
+            outputController.ShowResult(value);
         }
         catch (FormatException ex)
         {
             Debug.Log(ex.ToString());
-            return "Syntax Error"; 
+            outputController.ShowResult("Syntax error");
         }
     }
 
-    public string CalculateTemperature(string value,TMP_Dropdown dropdownNum,TMP_Dropdown dropdownResult)
+    public void CalculateTemperature(TMP_Dropdown dropdownNum,TMP_Dropdown dropdownResult)
     {
         try
         {
@@ -57,16 +58,16 @@ public class Calculate : MonoBehaviour
             
             Enum unitTo = UnitParser.Default.Parse(dropdownResult.options[dropdownResult.value].text, typeof(TemperatureUnit));
 
-            double convertedValue = UnitConverter.Convert(decimal.Parse(value), unitFrom, unitTo);
+            double convertedValue = UnitConverter.Convert(decimal.Parse(outputController.ReadText()), unitFrom, unitTo);
             decimal toValue = Convert.ToDecimal(convertedValue);
-            value = toValue.ToString();
+            string value = toValue.ToString();
 
-            return value;
+            outputController.ShowResult(value);
         }
         catch(FormatException ex) 
         {
             Debug.Log(ex.ToString());
-            return "Syntax Error";
+            outputController.ShowResult("Syntax error");
         }
         
     }
