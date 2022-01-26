@@ -11,23 +11,86 @@ public class CalculateDistance : MonoBehaviour,ICalculator
     [SerializeField]
     private OutputController outputController;
     [SerializeField]
-    private TMP_Dropdown input;
+    private TMP_Dropdown inputDropdown;
     [SerializeField]
-    private TMP_Dropdown output;
+    private TMP_Dropdown outputDropdown;
 
-    public void Calculate()
+    public void Calculate() 
     {
-         try
+        try
         {
-            Enum unitFrom = UnitParser.Default.Parse(input.options[input.value].text, typeof(LengthUnit));
+            string inputValue;
+            switch (inputDropdown.value)
+            {
+                case 0:
+                    inputValue = "m";
+                    break;
+                case 1:
+                    inputValue = "cm";
+                    break;
+                case 2:
+                    inputValue = "mm";
+                    break;
+                case 3:
+                    inputValue = "km";
+                    break;
+                case 4:
+                    inputValue = "mi";
+                    break;
+                case 5:
+                    inputValue = "In";
+                    break;
+                case 6:
+                    inputValue = "ft";
+                    break;
+                case 7:
+                    inputValue = "yd";
+                    break;
+                default:
+                    inputValue = "Error";
+                    break;
+            }
+            Enum unitFrom = UnitParser.Default.Parse(inputValue, typeof(LengthUnit));
+            string outputValue;
+            switch (outputDropdown.value)
+            {
+                case 0:
+                    outputValue = "m";
+                    break;
+                case 1:
+                    outputValue = "cm";
+                    break;
+                case 2:
+                    outputValue = "mm";
+                    break;
+                case 3:
+                    outputValue = "km";
+                    break;
+                case 4:
+                    outputValue = "mi";
+                    break;
+                case 5:
+                    outputValue = "In";
+                    break;
+                case 6:
+                    outputValue = "ft";
+                    break;
+                case 7:
+                    outputValue = "yd";
+                    break;
+                default:
+                    outputValue = "Error";
+                    break;
+            }
 
-            Enum unitTo = UnitParser.Default.Parse(output.options[output.value].text, typeof(LengthUnit));
+            Enum unitTo = UnitParser.Default.Parse(outputValue, typeof(LengthUnit));
 
             double convertedValue = UnitConverter.Convert(decimal.Parse(outputController.ReadText()), unitFrom, unitTo);
             decimal toValue = Convert.ToDecimal(convertedValue);
             string value = toValue.ToString();
 
             outputController.ShowResult(value);
+
         }
         catch (FormatException ex)
         {
@@ -35,5 +98,5 @@ public class CalculateDistance : MonoBehaviour,ICalculator
             outputController.ShowResult("Syntax error");
         }
     }
-
+  
 }

@@ -11,17 +11,51 @@ public class CalculateTemperature : MonoBehaviour,ICalculator
     [SerializeField]
     private OutputController outputController;
     [SerializeField]
-    private TMP_Dropdown input;
+    private TMP_Dropdown inputDropdown;
     [SerializeField]
-    private TMP_Dropdown output;
+    private TMP_Dropdown outputDropdown;
 
     public void Calculate()
     {
         try
         {
-            Enum unitFrom = UnitParser.Default.Parse(input.options[input.value].text, typeof(TemperatureUnit));
+            string inputValue;
+            switch (inputDropdown.value)
+            {
+                case 0:
+                    inputValue = Temperature.GetAbbreviation(TemperatureUnit.DegreeCelsius);
+                    break;
+                case 1:
+                    inputValue = Temperature.GetAbbreviation(TemperatureUnit.DegreeFahrenheit);
+                    break;
+                case 2:
+                    inputValue = Temperature.GetAbbreviation(TemperatureUnit.Kelvin);
+                    break;
+                default:
+                    inputValue = "Error";
+                    break;
+            }
+           
+            string outputValue;
+            switch (outputDropdown.value)
+            {
+                case 0:
+                    outputValue = Temperature.GetAbbreviation(TemperatureUnit.DegreeCelsius);
+                    break;
+                case 1:
+                    outputValue = Temperature.GetAbbreviation(TemperatureUnit.DegreeFahrenheit);
+                    break;
+                case 2:
+                    outputValue = Temperature.GetAbbreviation(TemperatureUnit.Kelvin);
+                    break;
+                default:
+                    outputValue = "Error";
+                    break;
+            }
 
-            Enum unitTo = UnitParser.Default.Parse(output.options[output.value].text, typeof(TemperatureUnit));
+            Enum unitFrom = UnitParser.Default.Parse(inputValue, typeof(TemperatureUnit));
+
+            Enum unitTo = UnitParser.Default.Parse(outputValue, typeof(TemperatureUnit));
 
             double convertedValue = UnitConverter.Convert(decimal.Parse(outputController.ReadText()), unitFrom, unitTo);
             decimal toValue = Convert.ToDecimal(convertedValue);
