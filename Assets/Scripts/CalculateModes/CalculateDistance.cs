@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnitsNet;
-using UnitsNet.Units;
+using ConverterLib;
 using System;
 
 public class CalculateDistance : MonoBehaviour,ICalculator
@@ -38,7 +37,7 @@ public class CalculateDistance : MonoBehaviour,ICalculator
                     inputValue = "mi";
                     break;
                 case 5:
-                    inputValue = "In";
+                    inputValue = "in";
                     break;
                 case 6:
                     inputValue = "ft";
@@ -50,7 +49,7 @@ public class CalculateDistance : MonoBehaviour,ICalculator
                     inputValue = "Error";
                     break;
             }
-            Enum unitFrom = UnitParser.Default.Parse(inputValue, typeof(LengthUnit));
+            Length unitFrom = ConverterLib.Converter.ParceStringToUnit(inputValue);
             string outputValue;
             switch (outputDropdown.value)
             {
@@ -70,7 +69,7 @@ public class CalculateDistance : MonoBehaviour,ICalculator
                     outputValue = "mi";
                     break;
                 case 5:
-                    outputValue = "In";
+                    outputValue = "in";
                     break;
                 case 6:
                     outputValue = "ft";
@@ -83,19 +82,26 @@ public class CalculateDistance : MonoBehaviour,ICalculator
                     break;
             }
 
-            Enum unitTo = UnitParser.Default.Parse(outputValue, typeof(LengthUnit));
+            Length unitTo = ConverterLib.Converter.ParceStringToUnit(outputValue);
 
-            double convertedValue = UnitConverter.Convert(decimal.Parse(outputController.ReadText()), unitFrom, unitTo);
+            double convertedValue = ConverterLib.Converter.UnitConverterLength(unitFrom,unitTo,decimal.Parse(outputController.ReadText()));
             decimal toValue = Convert.ToDecimal(convertedValue);
             string value = toValue.ToString();
 
             outputController.ShowResult(value);
 
         }
-        catch (FormatException ex)
+        catch (System.Exception e)
         {
-            Debug.Log(ex.ToString());
-            outputController.ShowResult("Syntax error");
+            if (e is FormatException)
+            {
+                Debug.Log(e.ToString());
+                outputController.ShowResult("Syntax error");
+            }
+            if (e is System.Exception) 
+            {
+                outputController.ShowResult(e.Message);
+            }
         }
     }
   

@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnitsNet;
-using UnitsNet.Units;
+using ConverterLib;
 using System;
 
 public class CalculateTemperature : MonoBehaviour,ICalculator
@@ -23,13 +22,13 @@ public class CalculateTemperature : MonoBehaviour,ICalculator
             switch (inputDropdown.value)
             {
                 case 0:
-                    inputValue = Temperature.GetAbbreviation(TemperatureUnit.DegreeCelsius);
+                    inputValue = "Celsius";
                     break;
                 case 1:
-                    inputValue = Temperature.GetAbbreviation(TemperatureUnit.DegreeFahrenheit);
+                    inputValue = "Fahrenheit";
                     break;
                 case 2:
-                    inputValue = Temperature.GetAbbreviation(TemperatureUnit.Kelvin);
+                    inputValue = "Kelvin";
                     break;
                 default:
                     inputValue = "Error";
@@ -40,33 +39,39 @@ public class CalculateTemperature : MonoBehaviour,ICalculator
             switch (outputDropdown.value)
             {
                 case 0:
-                    outputValue = Temperature.GetAbbreviation(TemperatureUnit.DegreeCelsius);
+                    outputValue = "Celsius";
                     break;
                 case 1:
-                    outputValue = Temperature.GetAbbreviation(TemperatureUnit.DegreeFahrenheit);
+                    outputValue = "Fahrenheit";
                     break;
                 case 2:
-                    outputValue = Temperature.GetAbbreviation(TemperatureUnit.Kelvin);
+                    outputValue = "Kelvin";
                     break;
                 default:
                     outputValue = "Error";
                     break;
             }
 
-            Enum unitFrom = UnitParser.Default.Parse(inputValue, typeof(TemperatureUnit));
+            Temperature unitFrom = ConverterLib.Converter.ParceStringToUnitTemperature(inputValue);
+            Temperature unitTo=ConverterLib.Converter.ParceStringToUnitTemperature(outputValue);
 
-            Enum unitTo = UnitParser.Default.Parse(outputValue, typeof(TemperatureUnit));
-
-            double convertedValue = UnitConverter.Convert(decimal.Parse(outputController.ReadText()), unitFrom, unitTo);
+            double convertedValue = ConverterLib.Converter.UnitConverterTemperature(unitFrom, unitTo, decimal.Parse(outputController.ReadText()));
             decimal toValue = Convert.ToDecimal(convertedValue);
             string value = toValue.ToString();
 
             outputController.ShowResult(value);
         }
-        catch (FormatException ex)
+        catch (System.Exception e)
         {
-            Debug.Log(ex.ToString());
-            outputController.ShowResult("Syntax error");
+            if (e is FormatException)
+            {
+                Debug.Log(e.ToString());
+                outputController.ShowResult("Syntax error");
+            }
+            if (e is System.Exception)
+            {
+                outputController.ShowResult(e.Message);
+            }
         }
     }
 }
