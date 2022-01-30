@@ -14,7 +14,7 @@ public class CalculateExpression : MonoBehaviour,ICalculator
         try
         {
             string expression = outputController.ReadText();
-            string pattern = @"^[-+]?(\d+\.?\d*)+([-|+|*|/]{1})+(\d+\.?\d*)";
+            string pattern = @"^[-+]?(\d+\.?\d*){1}([-,+,*,/]){1}(\d+\.?\d*){1}";
             System.Text.RegularExpressions.MatchCollection matchCollection = System.Text.RegularExpressions.Regex.Matches(expression, pattern);
             int check = matchCollection.Count;
             if (check == 0)
@@ -27,6 +27,7 @@ public class CalculateExpression : MonoBehaviour,ICalculator
                 decimal value1 = Decimal.Parse(m.Groups[1].Value);
                 decimal value2 = Decimal.Parse(m.Groups[3].Value);
                 decimal valueResult;
+             
                 switch (m.Groups[2].Value)
                 {
                     case "+":
