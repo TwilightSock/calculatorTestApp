@@ -18,8 +18,8 @@ public class CalculateDistance : MonoBehaviour,ICalculator
     {
         try
         {
-            Length unitFrom = (Length)inputDropdown.GetValueFromDropdown();
-            Length unitTo = (Length)outputDropdown.GetValueFromDropdown();
+            Length unitFrom = inputDropdown.GetValueFromDropdown();
+            Length unitTo = outputDropdown.GetValueFromDropdown();
 
             double convertedValue = ConverterLib.Converter.UnitConverterLength(unitFrom, unitTo, decimal.Parse(outputController.ReadText()));
             decimal toValue = Convert.ToDecimal(convertedValue);

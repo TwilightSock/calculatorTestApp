@@ -4,7 +4,7 @@ using UnityEngine;
 using ConverterLib;
 using TMPro;
 
-public interface IDropdownController 
+public interface IDropdownController<T>
 {
-    int GetValueFromDropdown();
+   T GetValueFromDropdown();
 }

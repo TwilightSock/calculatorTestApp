@@ -5,7 +5,7 @@ using UnityEngine;
 using ConverterLib;
 using TMPro;
 
-public class TemperatureDropdown : MonoBehaviour,IDropdownController
+public class TemperatureDropdown : MonoBehaviour,IDropdownController<Temperature>
 {
     [SerializeField]
     private TMP_Dropdown dropdown;
@@ -15,18 +15,18 @@ public class TemperatureDropdown : MonoBehaviour,IDropdownController
         List<string> optionList = new List<string> { "°C", "°F", "K" };
         dropdown.AddOptions(optionList);
     }
-    public int GetValueFromDropdown()
+    public Temperature GetValueFromDropdown()
     {
         switch (dropdown.value)
         {
             case 0:
-                return 0;
+                return Temperature.Celsius;
             case 1:
-                return 1;
+                return Temperature.Fahrenheit;
             case 2:
-                return 2;
+                return Temperature.Kelvin;
             default:
-                return 3;
+                return Temperature.unknown;
         }
     }
 }

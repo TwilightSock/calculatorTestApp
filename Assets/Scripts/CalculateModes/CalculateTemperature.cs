@@ -18,8 +18,8 @@ public class CalculateTemperature : MonoBehaviour,ICalculator
     {
         try
         {
-            Temperature unitFrom = (Temperature) inputDropdown.GetValueFromDropdown();
-            Temperature unitTo = (Temperature) outputDropdown.GetValueFromDropdown();
+            Temperature unitFrom = inputDropdown.GetValueFromDropdown();
+            Temperature unitTo =  outputDropdown.GetValueFromDropdown();
 
             double convertedValue = ConverterLib.Converter.UnitConverterTemperature(unitFrom, unitTo, decimal.Parse(outputController.ReadText()));
             decimal toValue = Convert.ToDecimal(convertedValue);
