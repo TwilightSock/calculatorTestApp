@@ -737,7 +737,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: m
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -764,7 +764,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 20
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1063,6 +1063,7 @@ GameObject:
   - component: {fileID: 1345848810856431376}
   - component: {fileID: 1345848810856431377}
   - component: {fileID: 1345848810856431378}
+  - component: {fileID: 1377858680625201003}
   m_Layer: 0
   m_Name: DistanceDropdown
   m_TagString: Untagged
@@ -1179,24 +1180,21 @@ MonoBehaviour:
   m_ItemImage: {fileID: 0}
   m_Value: 0
   m_Options:
-    m_Options:
-    - m_Text: m
-      m_Image: {fileID: 0}
-    - m_Text: cm
-      m_Image: {fileID: 0}
-    - m_Text: mm
-      m_Image: {fileID: 0}
-    - m_Text: km
-      m_Image: {fileID: 0}
-    - m_Text: mi
-      m_Image: {fileID: 0}
-    - m_Text: In
-      m_Image: {fileID: 0}
-    - m_Text: ft
-      m_Image: {fileID: 0}
-    - m_Text: yd
-      m_Image: {fileID: 0}
+    m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &1377858680625201003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345848810856431372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed82d46f7671ad94fa3efeaad33ba17a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 1345848810856431378}

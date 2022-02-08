@@ -10,81 +10,18 @@ public class CalculateDistance : MonoBehaviour,ICalculator
     [SerializeField]
     private OutputController outputController;
     [SerializeField]
-    private TMP_Dropdown inputDropdown;
+    private DistanceDropdown inputDropdown;
     [SerializeField]
-    private TMP_Dropdown outputDropdown;
+    private DistanceDropdown outputDropdown;
 
     public void Calculate() 
     {
         try
         {
-            string inputValue;
-            switch (inputDropdown.value)
-            {
-                case 0:
-                    inputValue = "m";
-                    break;
-                case 1:
-                    inputValue = "cm";
-                    break;
-                case 2:
-                    inputValue = "mm";
-                    break;
-                case 3:
-                    inputValue = "km";
-                    break;
-                case 4:
-                    inputValue = "mi";
-                    break;
-                case 5:
-                    inputValue = "in";
-                    break;
-                case 6:
-                    inputValue = "ft";
-                    break;
-                case 7:
-                    inputValue = "yd";
-                    break;
-                default:
-                    inputValue = "Error";
-                    break;
-            }
-            Length unitFrom = ConverterLib.Converter.ParceStringToUnit(inputValue);
-            string outputValue;
-            switch (outputDropdown.value)
-            {
-                case 0:
-                    outputValue = "m";
-                    break;
-                case 1:
-                    outputValue = "cm";
-                    break;
-                case 2:
-                    outputValue = "mm";
-                    break;
-                case 3:
-                    outputValue = "km";
-                    break;
-                case 4:
-                    outputValue = "mi";
-                    break;
-                case 5:
-                    outputValue = "in";
-                    break;
-                case 6:
-                    outputValue = "ft";
-                    break;
-                case 7:
-                    outputValue = "yd";
-                    break;
-                default:
-                    outputValue = "Error";
-                    break;
-            }
+            Length unitFrom = (Length)inputDropdown.GetValueFromDropdown();
+            Length unitTo = (Length)outputDropdown.GetValueFromDropdown();
 
-            Length unitTo = ConverterLib.Converter.ParceStringToUnit(outputValue);
-
-            double convertedValue = ConverterLib.Converter.UnitConverterLength(unitFrom,unitTo,decimal.Parse(outputController.ReadText()));
+            double convertedValue = ConverterLib.Converter.UnitConverterLength(unitFrom, unitTo, decimal.Parse(outputController.ReadText()));
             decimal toValue = Convert.ToDecimal(convertedValue);
             string value = toValue.ToString();
 

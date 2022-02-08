@@ -6,9 +6,9 @@ namespace ConverterLib
 {
     public enum Length
     {
-        Millimeter,
-        Centimeter,
         Meter,
+        Centimeter,
+        Millimeter,
         Kilometer,
         Mile,
         Inch,

@@ -10,50 +10,16 @@ public class CalculateTemperature : MonoBehaviour,ICalculator
     [SerializeField]
     private OutputController outputController;
     [SerializeField]
-    private TMP_Dropdown inputDropdown;
+    private TemperatureDropdown inputDropdown;
     [SerializeField]
-    private TMP_Dropdown outputDropdown;
+    private TemperatureDropdown outputDropdown;
 
     public void Calculate()
     {
         try
         {
-            string inputValue;
-            switch (inputDropdown.value)
-            {
-                case 0:
-                    inputValue = "Celsius";
-                    break;
-                case 1:
-                    inputValue = "Fahrenheit";
-                    break;
-                case 2:
-                    inputValue = "Kelvin";
-                    break;
-                default:
-                    inputValue = "Error";
-                    break;
-            }
-           
-            string outputValue;
-            switch (outputDropdown.value)
-            {
-                case 0:
-                    outputValue = "Celsius";
-                    break;
-                case 1:
-                    outputValue = "Fahrenheit";
-                    break;
-                case 2:
-                    outputValue = "Kelvin";
-                    break;
-                default:
-                    outputValue = "Error";
-                    break;
-            }
-
-            Temperature unitFrom = ConverterLib.Converter.ParceStringToUnitTemperature(inputValue);
-            Temperature unitTo=ConverterLib.Converter.ParceStringToUnitTemperature(outputValue);
+            Temperature unitFrom = (Temperature) inputDropdown.GetValueFromDropdown();
+            Temperature unitTo = (Temperature) outputDropdown.GetValueFromDropdown();
 
             double convertedValue = ConverterLib.Converter.UnitConverterTemperature(unitFrom, unitTo, decimal.Parse(outputController.ReadText()));
             decimal toValue = Convert.ToDecimal(convertedValue);
