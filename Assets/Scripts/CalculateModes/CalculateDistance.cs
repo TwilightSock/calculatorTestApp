@@ -5,41 +5,34 @@ using UnityEngine;
 using ConverterLib;
 using System;
 
+
 public class CalculateDistance : MonoBehaviour,ICalculator
 {
     [SerializeField]
-    private OutputController outputController;
+    private Length _unitFrom;
     [SerializeField]
-    private DistanceDropdown inputDropdown;
-    [SerializeField]
-    private DistanceDropdown outputDropdown;
+    private Length _unitTo;
 
-    public void Calculate() 
+    public Length UnitTo 
     {
-        try
-        {
-            Length unitFrom = inputDropdown.GetValueFromDropdown();
-            Length unitTo = outputDropdown.GetValueFromDropdown();
+        get { return _unitTo; }
+        set { _unitTo = value; } 
+    }
 
-            double convertedValue = ConverterLib.Converter.UnitConverterLength(unitFrom, unitTo, decimal.Parse(outputController.ReadText()));
-            decimal toValue = Convert.ToDecimal(convertedValue);
-            string value = toValue.ToString();
-
-            outputController.ShowResult(value);
-
-        }
-        catch (System.Exception e)
-        {
-            if (e is FormatException)
-            {
-                Debug.Log(e.ToString());
-                outputController.ShowResult("Syntax error");
-            }
-            if (e is System.Exception) 
-            {
-                outputController.ShowResult(e.Message);
-            }
-        }
+    public Length UnitFrom
+    {
+        get { return _unitFrom; }
+        set { _unitFrom = value; }
+    }
+    public string Calculate(object abstractContainer) 
+    {
+        Container<Length, Temperature> container = (Container<Length, Temperature>)abstractContainer;
+        UnitFrom = container.distanceUnitFrom;
+        UnitTo = container.distanceUnitTo;
+        string expression = container.Expression;
+        double convertedValue = ConverterLib.Converter.UnitConverterLength(UnitFrom, UnitTo, decimal.Parse(expression));
+        decimal toValue = Convert.ToDecimal(convertedValue);
+        return toValue.ToString();
     }
   
 }

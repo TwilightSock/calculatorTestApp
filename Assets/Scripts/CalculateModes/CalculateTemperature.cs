@@ -5,39 +5,35 @@ using UnityEngine;
 using ConverterLib;
 using System;
 
+
 public class CalculateTemperature : MonoBehaviour,ICalculator
 {
     [SerializeField]
-    private OutputController outputController;
+    private Temperature _unitFrom;
     [SerializeField]
-    private TemperatureDropdown inputDropdown;
-    [SerializeField]
-    private TemperatureDropdown outputDropdown;
+    private Temperature _unitTo;
 
-    public void Calculate()
+    public Temperature unitTo
     {
-        try
-        {
-            Temperature unitFrom = inputDropdown.GetValueFromDropdown();
-            Temperature unitTo =  outputDropdown.GetValueFromDropdown();
+        get { return _unitTo; }
+        set { _unitTo = value; }
+    }
 
-            double convertedValue = ConverterLib.Converter.UnitConverterTemperature(unitFrom, unitTo, decimal.Parse(outputController.ReadText()));
-            decimal toValue = Convert.ToDecimal(convertedValue);
-            string value = toValue.ToString();
+    public Temperature unitFrom
+    {
+        get { return _unitFrom; }
+        set { _unitFrom = value; }
+    }
 
-            outputController.ShowResult(value);
-        }
-        catch (System.Exception e)
-        {
-            if (e is FormatException)
-            {
-                Debug.Log(e.ToString());
-                outputController.ShowResult("Syntax error");
-            }
-            if (e is System.Exception)
-            {
-                outputController.ShowResult(e.Message);
-            }
-        }
+    public string Calculate(object abstractContainer)
+    {
+        Container<Length, Temperature> container = (Container<Length, Temperature>)abstractContainer;
+        unitFrom = container.temperatureUnitFrom;
+        unitTo = container.temperatureUnitTo;
+        string expression = container.Expression;
+        double convertedValue = ConverterLib.Converter.UnitConverterTemperature(unitFrom, unitTo, decimal.Parse(expression));
+        decimal toValue = Convert.ToDecimal(convertedValue);
+        return  toValue.ToString();
+       
     }
 }

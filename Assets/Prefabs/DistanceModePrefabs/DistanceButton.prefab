@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 7560151018120501759}
   - component: {fileID: 8042166442912160819}
   - component: {fileID: 8532422327083094389}
-  - component: {fileID: 7228407107365360714}
+  - component: {fileID: 5235807453176741761}
   m_Layer: 0
   m_Name: DistanceButton
   m_TagString: Untagged
@@ -256,19 +256,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 5235807453176741761}
+        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+        m_MethodName: AddValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7228407107365360714
+--- !u!114 &5235807453176741761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,12 +277,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8699321297383508009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f47c831305c8044aa2fb5f33d22501, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c74b22421d13cb4a936578343225f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   value: 
   outputController: {fileID: 0}
-  distanceController: {fileID: 0}
-  groupObjectsController: {fileID: 0}
-  dropdownNum: {fileID: 0}
-  dropdownResult: {fileID: 0}
+  interfaceGameObject: {fileID: 0}
+  changeModeTo: {fileID: 0}
+  changeModeFrom: {fileID: 0}
+  modeController: {fileID: 0}

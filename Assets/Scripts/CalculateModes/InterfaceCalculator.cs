@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ICalculator 
 {
-    public void Calculate();
+    public string Calculate(object abstractCountainer);
 }
