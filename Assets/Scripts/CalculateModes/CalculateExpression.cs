@@ -34,7 +34,7 @@ public class CalculateExpression : MonoBehaviour,ICalculator
                     case "+":
                         valueResult = value1 + value2;
                         Debug.Log(valueResult);
-                        expression = valueResult .ToString();
+                        expression = valueResult.ToString();
                         break;
                     case "-":
                         valueResult= value1 - value2;

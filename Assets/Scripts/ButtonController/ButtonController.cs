@@ -95,7 +95,7 @@ public class ButtonController : MonoBehaviour
         }
         catch (Exception ex) 
         {
-            outputController.ShowResult("Error");
+            outputController.ShowResult(ex.Message);
         }
     }
 
@@ -110,4 +110,5 @@ public class ButtonController : MonoBehaviour
         modeController.ModeOpen(changeModeFrom, changeModeTo);
     }
 
+  
 }  
